@@ -28,7 +28,7 @@ class Ship():
         return torpedo
 
         
-class Torpedo(Ship):
+class Torpedo():
 
     def __init__(self, position, velocity, accleration, fired_foreward):
         self.position = position
@@ -57,9 +57,9 @@ def simulate():
     #===========================================================================
     delta_t = 0.001  # simulation precision
     free_navy_pella = Ship(position=0, velocity=900000000, accleration=50, torpedo_acceleration=1000)  # pella travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
-    torpedo_free_navy_pella = free_navy_pella.fire(True)  # Pella fires missile at Rocinante.
+    torpedo_free_navy_pella = free_navy_pella.fire(True)  # Pella fires a torpedo at the Rocinante.
     rocinante = Ship(position=100000000, velocity=900000000, accleration=50, torpedo_acceleration=1000)  # rocinante is 100KM away from the Pella, travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
-    torpedo_rocinante = rocinante.fire(False)  # Rocinante fires missile at Pella.
+    torpedo_rocinante = rocinante.fire(False)  # Rocinante fires a torpedo at the Pella.
     
     # simulation loop
     step = 0
