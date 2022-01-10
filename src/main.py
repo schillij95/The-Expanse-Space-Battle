@@ -76,8 +76,8 @@ def simulate():
         if pella_hit and rocinante_hit:
             break
         step += 1
-    print(f"Torpedo from Rocinante connected after{torpedo_free_navy_pella.connected: .2f} seconds with the Pella.")
-    print(f"Torpedo from Pella connected after{torpedo_rocinante.connected: .2f} seconds with Rocinante.")
+    print(f"Torpedo from Rocinante connected after{torpedo_rocinante.connected: .2f} seconds with the Pella.")
+    print(f"Torpedo from Pella connected after{torpedo_free_navy_pella.connected: .2f} seconds with the Rocinante.")
     print(f"This means, the Rocinante's PDCs have{100*(torpedo_free_navy_pella.connected/torpedo_rocinante.connected - 1): .2f}% more time to shoot down enemy torpedos.")
 
         
