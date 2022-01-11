@@ -7,10 +7,10 @@ This simulation shows that a fleeing spaceship has more time to defend itself fr
 
 class Ship():
 
-    def __init__(self, position, velocity, accleration, torpedo_acceleration):
+    def __init__(self, position, velocity, acceleration, torpedo_acceleration):
         self.position = position
         self.velocity = velocity
-        self.acceleration = accleration
+        self.acceleration = acceleration
         self.torpedo_acceleration = torpedo_acceleration
     
     # update position and velocity
@@ -30,10 +30,10 @@ class Ship():
         
 class Torpedo():
 
-    def __init__(self, position, velocity, accleration, fired_foreward):
+    def __init__(self, position, velocity, acceleration, fired_foreward):
         self.position = position
         self.velocity = velocity
-        self.acceleration = accleration
+        self.acceleration = acceleration
         self.fired_foreward = fired_foreward
         self.connected = None
         
@@ -56,9 +56,9 @@ def simulate():
     # HERE YOU CAN PLAY WITH DIFFERENT SETTINGS TO OBSERVE THE OUTCOMES
     #===========================================================================
     delta_t = 0.001  # simulation precision
-    free_navy_pella = Ship(position=0, velocity=900000000, accleration=50, torpedo_acceleration=1000)  # pella travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
+    free_navy_pella = Ship(position=0, velocity=900000, acceleration=50, torpedo_acceleration=1000)  # pella travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
     torpedo_free_navy_pella = free_navy_pella.fire(True)  # Pella fires a torpedo at the Rocinante.
-    rocinante = Ship(position=1000000, velocity=900000000, accleration=50, torpedo_acceleration=1000)  # rocinante is 1000KM away from the Pella (Railgun has around 1000KM max range), travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
+    rocinante = Ship(position=1000000, velocity=900000, acceleration=50, torpedo_acceleration=1000)  # rocinante is 1000KM away from the Pella (Railgun has around 1000KM max range), travelling at 900KM/s and accelerating with 5G. torpedo accelerate with 100G.
     torpedo_rocinante = rocinante.fire(False)  # Rocinante fires a torpedo at the Pella.
     
     # simulation loop
