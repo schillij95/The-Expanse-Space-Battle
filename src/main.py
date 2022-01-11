@@ -79,6 +79,7 @@ def simulate():
     print(f"Torpedo from Rocinante connected after{torpedo_rocinante.connected: .2f} seconds with the Pella.")
     print(f"Torpedo from Pella connected after{torpedo_free_navy_pella.connected: .2f} seconds with the Rocinante.")
     print(f"This means, the Rocinante's PDCs have{100*(torpedo_free_navy_pella.connected/torpedo_rocinante.connected - 1): .2f}% more time to shoot down enemy torpedos.")
+    print(f"Torpedos impact {100*(1-(torpedo_free_navy_pella.velocity-rocinante.velocity)/(free_navy_pella.velocity-torpedo_rocinante.velocity)):.2f}% slower at the Rocinante than the Pella ({int((torpedo_free_navy_pella.velocity-rocinante.velocity)/1000)} Km/s vs {int((free_navy_pella.velocity-torpedo_rocinante.velocity)/1000)} Km/s).")
 
         
 if __name__ == '__main__':
